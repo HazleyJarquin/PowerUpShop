@@ -12,7 +12,7 @@ export const MobileCategoryButtons = ({ category }: Props) => {
       <Link
         href="/category/protein"
         className={clsx("p-1 hover:bg-gray-100 rounded", {
-          "bg-gray-500": category === "protein",
+          "bg-[#FFA07A] text-white": category === "protein",
         })}
       >
         Proteínas
@@ -20,7 +20,7 @@ export const MobileCategoryButtons = ({ category }: Props) => {
       <Link
         href="/category/aminoAcids"
         className={clsx("p-1 hover:bg-gray-100 rounded", {
-          "bg-gray-500": category === "aminoAcids",
+          "bg-[#FFA07A] text-white": category === "aminoAcids",
         })}
       >
         Aminoácidos
@@ -28,7 +28,7 @@ export const MobileCategoryButtons = ({ category }: Props) => {
       <Link
         href="/category/creatine"
         className={clsx("p-1 hover:bg-gray-100 rounded", {
-          "bg-gray-500": category === "creatine",
+          "bg-[#FFA07A] text-white": category === "creatine",
         })}
       >
         Creatina

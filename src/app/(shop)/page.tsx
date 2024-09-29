@@ -10,6 +10,7 @@ export default function Shop() {
         subtitle="Todos los productos"
         className="mb-2"
       />
+
       <MobileCategoryButtons />
       <ProductGrid products={products} />
     </div>
