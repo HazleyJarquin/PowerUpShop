@@ -5,7 +5,11 @@ const products = initialData.products;
 export default function Shop() {
   return (
     <div>
-      <Title title="Tienda" subtitle="Todos los productos" className="mb-2" />
+      <Title
+        title="PowerUp Shop"
+        subtitle="Todos los productos"
+        className="mb-2"
+      />
       <MobileCategoryButtons />
       <ProductGrid products={products} />
     </div>
