@@ -4,8 +4,9 @@ import { titleFont } from "@/config/fonts";
 import { signIn } from "next-auth/react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
-const SignIn = () => {
+function SignIn() {
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get("callbackUrl") || "/";
 
@@ -17,7 +18,7 @@ const SignIn = () => {
         </h1>
         <button
           onClick={() => signIn("google", { redirect: true, callbackUrl })}
-          className="flex gap-2 items-center rounded-lg bg-cyan-100 p-3 w-full hover:bg-cyan-200 border-b-2 border-cyan-200  hover:border-cyan-300"
+          className="flex gap-2 items-center rounded-lg bg-cyan-100 p-3 w-full hover:bg-cyan-200 border-b-2 border-cyan-200 hover:border-cyan-300"
         >
           <Image
             src="/google/logo-google.png"
@@ -35,11 +36,18 @@ const SignIn = () => {
         </div>
 
         <div>
-          <p className="opacity-30">username, password comming soon..</p>
+          <p className="opacity-30">username, password coming soon..</p>
         </div>
       </div>
     </div>
   );
-};
+}
 
-export default SignIn;
+// Wrap your component with Suspense
+export default function SignInPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SignIn />
+    </Suspense>
+  );
+}
